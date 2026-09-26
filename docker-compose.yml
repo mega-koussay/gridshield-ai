@@ -1,0 +1,30 @@
+services:
+  backend:
+    build: ./backend
+    container_name: gridshield-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - GRIDSHIELD_HOST=0.0.0.0
+      - GRIDSHIELD_SEED=20260925
+    volumes:
+      - backend-data:/app/backend/data
+      - backend-models:/app/backend/models
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://localhost:8000/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+  frontend:
+    build: ./frontend
+    container_name: gridshield-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+
+volumes:
+  backend-data:
+  backend-models:

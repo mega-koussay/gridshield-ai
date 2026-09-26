@@ -1,0 +1,182 @@
+{
+  "forecast": {
+    "metered_solar_kw": {
+      "MAE_kW": 10.266,
+      "RMSE_kW": 12.185,
+      "n_test": 96,
+      "split": "80/20 chronological on clean rows"
+    },
+    "metered_load_kw": {
+      "MAE_kW": 7.129,
+      "RMSE_kW": 9.138,
+      "n_test": 96,
+      "split": "80/20 chronological on clean rows"
+    }
+  },
+  "detection": {
+    "threshold": 0.6722832245115546,
+    "FPR_clean": 0.005,
+    "per_attack": {
+      "FDI_BULK": {
+        "precision": 1.0,
+        "recall": 0.447,
+        "F1": 0.618,
+        "latency_steps": 0,
+        "latency_minutes": 0
+      },
+      "FDI_SOLAR": {
+        "precision": 1.0,
+        "recall": 0.467,
+        "F1": 0.636,
+        "latency_steps": 0,
+        "latency_minutes": 0
+      },
+      "SCADA_CMD": {
+        "precision": 1.0,
+        "recall": 0.433,
+        "F1": 0.605,
+        "latency_steps": 0,
+        "latency_minutes": 0
+      },
+      "DEVICE_MALWARE": {
+        "precision": 1.0,
+        "recall": 0.4,
+        "F1": 0.571,
+        "latency_steps": 0,
+        "latency_minutes": 0
+      },
+      "TELEMETRY_SPIKE": {
+        "precision": 1.0,
+        "recall": 0.383,
+        "F1": 0.554,
+        "latency_steps": 0,
+        "latency_minutes": 0
+      }
+    },
+    "mean_latency_steps": 0.0
+  },
+  "classification": {
+    "DEVICE_MALWARE": {
+      "precision": 0.20689655172413793,
+      "recall": 0.2727272727272727,
+      "f1-score": 0.23529411764705882,
+      "support": 22.0
+    },
+    "FDI_BULK": {
+      "precision": 0.26666666666666666,
+      "recall": 0.8888888888888888,
+      "f1-score": 0.41025641025641024,
+      "support": 9.0
+    },
+    "FDI_SOLAR": {
+      "precision": 0.28888888888888886,
+      "recall": 0.6190476190476191,
+      "f1-score": 0.3939393939393939,
+      "support": 21.0
+    },
+    "NONE": {
+      "precision": 0.9731136166522116,
+      "recall": 0.798576512455516,
+      "f1-score": 0.8772478498827209,
+      "support": 1405.0
+    },
+    "SCADA_CMD": {
+      "precision": 0.03125,
+      "recall": 0.2916666666666667,
+      "f1-score": 0.056451612903225805,
+      "support": 24.0
+    },
+    "TELEMETRY_SPIKE": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 19.0
+    },
+    "accuracy": 0.7833333333333333,
+    "macro avg": {
+      "precision": 0.4611359539886508,
+      "recall": 0.6451511599643271,
+      "f1-score": 0.49553156410480154,
+      "support": 1500.0
+    },
+    "weighted avg": {
+      "precision": 0.9333286814673033,
+      "recall": 0.7833333333333333,
+      "f1-score": 0.8466863822321136,
+      "support": 1500.0
+    }
+  },
+  "response_replay": {
+    "with_gridshield": {
+      "grid_import_kWh": 159.66,
+      "final_soc": 0.119,
+      "effective_energy_kWh": -55.84,
+      "effective_cost_usd": -11.169,
+      "battery_deviation_kWh": 10.0,
+      "hijacked_steps": 1,
+      "hijacked_minutes": 5,
+      "soc_floor_hit": true
+    },
+    "without_response": {
+      "grid_import_kWh": 140.74,
+      "final_soc": 0.195,
+      "effective_energy_kWh": -36.76,
+      "effective_cost_usd": -7.353,
+      "battery_deviation_kWh": 50.0,
+      "hijacked_steps": 5,
+      "hijacked_minutes": 25,
+      "soc_floor_hit": true
+    },
+    "delta": {
+      "effective_cost_saved_usd": 3.816,
+      "battery_deviation_reduced_kWh": 40.0,
+      "hijack_minutes_prevented": 20
+    }
+  },
+  "federated": {
+    "rounds": 8,
+    "participants": 6,
+    "history": [
+      {
+        "round": 1,
+        "global_mae": 7.058373318881634
+      },
+      {
+        "round": 2,
+        "global_mae": 7.058373318881634
+      },
+      {
+        "round": 3,
+        "global_mae": 7.058373318881634
+      },
+      {
+        "round": 4,
+        "global_mae": 7.058373318881633
+      },
+      {
+        "round": 5,
+        "global_mae": 7.058373318881634
+      },
+      {
+        "round": 6,
+        "global_mae": 7.058373318881634
+      },
+      {
+        "round": 7,
+        "global_mae": 7.058373318881634
+      },
+      {
+        "round": 8,
+        "global_mae": 7.058373318881634
+      }
+    ],
+    "final_global_mae": 7.058373318881634,
+    "centralized_mae": 7.058373318881634,
+    "privacy_note": "Only model weights are exchanged; raw consumption series never leave the buildings."
+  },
+  "config": {
+    "seed": 20260925,
+    "dataset_rows": 6000,
+    "attacked_rows": 380
+  }
+}

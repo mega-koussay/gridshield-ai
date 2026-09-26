@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Node
+node_modules/
+frontend/dist/
+
+# Runtime artifacts (regenerated; models retrain automatically)
+backend/gridshield.db
+backend/models/*.joblib
+backend/models/VERSION.txt
+server.log
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env (keep .env.example)
+.env
+.env.local

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 620" font-family="Segoe UI, sans-serif">
+  <defs>
+    <marker id="arr3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="960" height="620" fill="#0b1220"/>
+  <text x="24" y="36" fill="#e2e8f0" font-size="20" font-weight="700">Deterministic Demo — Sequence (seed 2026, FDI_BULK)</text>
+
+  <!-- lifelines -->
+  <g font-size="12" fill="#e2e8f0">
+    <rect x="60"  y="60" width="120" height="34" rx="8" fill="#111c33" stroke="#334155"/><text x="120"  y="82" text-anchor="middle">Jury / UI</text>
+    <rect x="240" y="60" width="130" height="34" rx="8" fill="#111c33" stroke="#38bdf8"/><text x="305"  y="82" text-anchor="middle">Orchestrator</text>
+    <rect x="430" y="60" width="120" height="34" rx="8" fill="#111c33" stroke="#ef4444"/><text x="490"  y="82" text-anchor="middle">AttackSim</text>
+    <rect x="600" y="60" width="130" height="34" rx="8" fill="#111c33" stroke="#22c55e"/><text x="665"  y="82" text-anchor="middle">AI stack</text>
+    <rect x="780" y="60" width="130" height="34" rx="8" fill="#111c33" stroke="#f59e0b"/><text x="845"  y="82" text-anchor="middle">Responder</text>
+  </g>
+  <g stroke="#334155" stroke-dasharray="4,4">
+    <line x1="120" y1="94" x2="120" y2="580"/><line x1="305" y1="94" x2="305" y2="580"/>
+    <line x1="490" y1="94" x2="490" y2="580"/><line x1="665" y1="94" x2="665" y2="580"/>
+    <line x1="845" y1="94" x2="845" y2="580"/>
+  </g>
+
+  <g font-size="11" fill="#cbd5e1">
+    <line x1="120" y1="120" x2="303" y2="120" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="212" y="112" text-anchor="middle">▶ RUN DEMO (seed 2026)</text>
+
+    <line x1="305" y1="150" x2="488" y2="150" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="397" y="142" text-anchor="middle">arm FDI_BULK @ twin step 42</text>
+
+    <line x1="490" y1="180" x2="307" y2="180" stroke="#ef4444" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="397" y="172" text-anchor="middle" fill="#f87171">t+42: metered load ×1.35</text>
+
+    <line x1="305" y1="210" x2="663" y2="210" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="485" y="202" text-anchor="middle">score raw window (5 channels)</text>
+
+    <line x1="665" y1="240" x2="307" y2="240" stroke="#22c55e" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="485" y="232" text-anchor="middle" fill="#4ade80">score 0.78 ≥ 0.67 → ALERT (1 step)</text>
+
+    <line x1="305" y1="270" x2="843" y2="270" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="574" y="262" text-anchor="middle">attribute + contain</text>
+
+    <line x1="845" y1="300" x2="307" y2="300" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="574" y="292" text-anchor="middle" fill="#fbbf24">MTR_B1 isolated, attacker session revoked</text>
+
+    <line x1="305" y1="330" x2="663" y2="330" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="485" y="322" text-anchor="middle">classify (RF) + explain (reasons, attributions)</text>
+
+    <line x1="305" y1="360" x2="663" y2="360" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="485" y="352" text-anchor="middle">reconstruct trusted load (frozen forecast)</text>
+
+    <line x1="305" y1="390" x2="663" y2="390" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="485" y="382" text-anchor="middle">re-solve MPC on trusted window</text>
+
+    <line x1="305" y1="420" x2="118" y2="420" stroke="#38bdf8" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="212" y="412" text-anchor="middle" fill="#7dd3fc">phase RE-OPTIMIZATION</text>
+
+    <line x1="490" y1="450" x2="307" y2="450" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="397" y="442" text-anchor="middle">episode ends (30 min)</text>
+
+    <line x1="845" y1="480" x2="307" y2="480" stroke="#22c55e" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="574" y="472" text-anchor="middle" fill="#4ade80">8 clean steps → device re-admitted</text>
+
+    <line x1="305" y1="510" x2="118" y2="510" stroke="#22c55e" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="212" y="502" text-anchor="middle" fill="#4ade80">phase RECOVERY</text>
+
+    <line x1="120" y1="545" x2="303" y2="545" stroke="#64748b" stroke-width="2" marker-end="url(#arr3)"/>
+    <text x="212" y="537" text-anchor="middle">⟲ RESET (same seed ⇒ same run)</text>
+  </g>
+</svg>
